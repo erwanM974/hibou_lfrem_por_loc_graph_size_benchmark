@@ -140,3 +140,29 @@ In the "graph_size_v3.zip" archive you also have all the intermediate artifacts
 Once you have a CSV table named "results_graph.csv" you can run the R script "plot_partial_order_local_analyses.R".
 It will print and plot relevant data found in the CSV file.
 
+
+
+
+
+
+## Remarks on time
+
+Because we are computing the whole subgraph reachable from *(i,mu)* systematically, the data that we use here
+is not that relevant to time when considering the time required to perform multi-trace analysis / offline runtime verification.
+
+Indeed, when we explore the graph, upon reaching *Ok*, we can immediately terminate, further exploration of the graph being
+unnecessary.
+The time required to explore the whole graph is only relevant for *Nok* traces and in the very worst cases of *Ok* traces (or e.g., if we use a BFS).
+
+Still, if we are interested in that time, we can look at the following data (time in the *y* axis in log scale).
+
+|          | no POR                                                             | with POR                                                           |
+|----------|--------------------------------------------------------------------|--------------------------------------------------------------------|
+| no LOC   | <img src="./README_images/time_whole_graph/nopor_noloc_timeg.png"> | <img src="./README_images/time_whole_graph/wtpor_noloc_timeg.png"> | 
+| with LOC | <img src="./README_images/time_whole_graph/nopor_wtloc_timeg.png"> | <img src="./README_images/time_whole_graph/wtpor_wtloc_timeg.png"> |
+
+
+A more interesting analysis on time is given in [this repository](https://github.com/erwanM974/hibou_lfrem_por_loc_time_benchmark),
+where, using the same input dataset, we benchmark the analysis time using a DFS traversal and a stopping criterion upon
+reaching *Ok*
+
