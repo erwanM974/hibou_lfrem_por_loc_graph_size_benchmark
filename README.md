@@ -57,6 +57,9 @@ We performed the experiments on an Intel(R) Core(TM) i5-6360U CPU (2.00GHz) with
 We set a $3$ seconds timeout for the traversal of the graph.
 
 
+<img src="./README_images/timeout_count_graph_size.png">
+
+
 The table above presents results related to the timeouts in a table.
 Its columns correspond to the type of multi-trace that is involved, full multi-traces, multi-prefixes, the three three kinds of mutants (further divided into those that are still within the multi-prefix semantics of the corresponding interaction and those that are not).
 The first row counts the total number of data points (whether or not there has been a timeout using any method).
