@@ -1,0 +1,8 @@
+@explore_option{
+    loggers = [tracegen[generation=modulo depth 1,
+                        partition=discrete]];
+    strategy = HCS;
+    memoize=false;
+    priorities = [randomize=true];
+    filters = [ max_depth = 24, max_node_number = 241 ]
+}

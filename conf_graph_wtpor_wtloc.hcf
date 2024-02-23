@@ -1,0 +1,8 @@
+@analyze_option{
+    strategy = BFS;
+    analysis_kind = eliminate;
+    local_analysis = [select=dirty, max_depth=none];
+    goal = none;
+    partial_order_reduction = true;
+    memoize = true;
+}
